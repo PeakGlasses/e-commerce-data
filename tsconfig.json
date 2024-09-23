@@ -1,0 +1,15 @@
+{
+    "compilerOptions": {
+        "target": "es5",                     // Ensure compatibility with older browsers
+        "module": "esnext",                   // Allows dynamic import() and ensures compatibility with Webpack
+        "jsx": "react-jsx",                   // Allows JSX syntax
+        "strict": true,                       // Enable strict type-checking options
+        "esModuleInterop": true,              // Allow default imports from modules with no default export
+        "skipLibCheck": true,                 // Skips type checking of declaration files for performance
+        "forceConsistentCasingInFileNames": true,  // Disallow inconsistencies in file name casing
+        "moduleResolution": "node",           // Helps Webpack resolve node modules correctly
+        "allowSyntheticDefaultImports": true  // Allows default imports
+    },
+    "include": ["src/**/*"],                // Include all files in the 'src' directory
+    "exclude": ["node_modules"]             // Exclude node_modules to avoid unnecessary compilation
+  }
