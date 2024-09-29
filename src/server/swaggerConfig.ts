@@ -12,15 +12,13 @@ const swaggerDefinition = {
   },
   servers: [
     {
-      url: "http://localhost:5000",
+      url: "http://localhost:8000",
       description: "Development server",
     },
   ],
 };
 
-const options = {
+module.exports = {
   swaggerDefinition,
-  apis: ["./src/routes/*.ts"], // Paths to files containing OpenAPI annotations
+  apis: ["./src/server/App.ts"], // Paths to files containing OpenAPI annotations
 };
-
-export default options;
