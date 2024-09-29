@@ -1,4 +1,3 @@
-import React from "react";
 import "../styles/pages/HomePage.css";
 
 export function Home() {
