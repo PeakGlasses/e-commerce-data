@@ -1,7 +1,9 @@
-function Contact() {
+export function Contact() {
   return (
-    <div>Contact</div>
-  )
+    <div>
+      <h1>Contact Us</h1>
+      <p>Reach out to our customer support team for any assistance.</p>
+      {/* Include a contact form or support information here */}
+    </div>
+  );
 }
-
-export default Contact

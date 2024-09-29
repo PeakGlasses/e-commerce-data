@@ -1,0 +1,11 @@
+export { About } from "./About";
+export { Home } from "./Home";
+export { ProductList } from "./ProductList";
+export { ProductDetails } from "./ProductDetails";
+export { Cart } from "./Cart";
+export { Contact } from "./Contact";
+export { FAQs } from "./FAQs";
+export { Returns } from "./Returns";
+export { Shipping } from "./Shipping";
+export { Careers } from "./Careers";
+export { Blog } from "./Blog";

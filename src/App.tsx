@@ -1,11 +1,20 @@
-import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import NavBar from './components/NavBar';
-import Footer from './components/Footer';
-import Home from './pages/Home';
-import ProductList from './pages/ProductList';
-import ProductDetails from './pages/ProductDetails';
-import Cart from './pages/Cart';
+import React from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import NavBar from "./components/NavBar";
+import Footer from "./components/Footer";
+import {
+  About,
+  Home,
+  ProductList,
+  ProductDetails,
+  Cart,
+  Contact,
+  FAQs,
+  Returns,
+  Shipping,
+  Careers,
+  Blog,
+} from "./pages";
 
 const App: React.FC = () => {
   return (
@@ -18,6 +27,13 @@ const App: React.FC = () => {
             <Route path="/products" element={<ProductList />} />
             <Route path="/products/:id" element={<ProductDetails />} />
             <Route path="/cart" element={<Cart />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/faqs" element={<FAQs />} />
+            <Route path="/returns" element={<Returns />} />
+            <Route path="/shipping" element={<Shipping />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/careers" element={<Careers />} />
+            <Route path="/blog" element={<Blog />} />
           </Routes>
         </main>
         <Footer />

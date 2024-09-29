@@ -1,7 +1,3 @@
-function Shop() {
-  return (
-    <div>Shop</div>
-  )
+export function Shop() {
+  return <div>Shop</div>;
 }
-
-export default Shop
