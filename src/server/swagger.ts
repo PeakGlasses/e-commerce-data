@@ -8,6 +8,6 @@ const options = require("./swaggerConfig"); // Import the options from the previ
 const swaggerSpec = swaggerJSDoc(options);
 
 module.exports = (app: typeof Express): void => {
-  // Serve Swagger UI at the '/api-docs' endpoint
-  app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
+    // Serve Swagger UI at the '/api-docs' endpoint
+    app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 };

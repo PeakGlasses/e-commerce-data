@@ -30,10 +30,10 @@ module.exports.use(express.static(path.join(__dirname, "../../public")));
  *                          type: string
  */
 module.exports.get("/api/hello", (req: any, res: any) => {
-  res.json({ message: "Hello from Express API! 🚀" });
+    res.json({ message: "Hello from Express API! 🚀" });
 });
 
 // Catch-all to serve React frontend on any route
 module.exports.get("*", (req: any, res: any) => {
-  res.sendFile(path.join(__dirname, "../../public", "index.html"));
+    res.sendFile(path.join(__dirname, "../../public", "index.html"));
 });
