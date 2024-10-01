@@ -5,24 +5,24 @@ const path = require("path");
 const cors = require("cors");
 const morgan = require("morgan");
 const logger = require("./logger");
-module.exports = express();
+const application = express();
 
 // Middleware
-module.exports.use(cors());
-module.exports.use(express.json());
+application.use(cors());
+application.use(express.json());
 
 // Setup Morgan to log HTTP requests with winston
-module.exports.use(morgan("combined", {
+application.use(morgan("combined", {
     stream: {
         write: (message: string) => logger.info(message.trim())
     }
 }))
 
 // Set up Swagger
-setupSwagger(module.exports);
+setupSwagger(application);
 
 // Serve React frontend
-module.exports.use(express.static(path.join(__dirname, "../../public")));
+application.use(express.static(path.join(__dirname, "../../public")));
 
 // Example route
 /**
@@ -36,13 +36,18 @@ module.exports.use(express.static(path.join(__dirname, "../../public")));
  *              content:
  *                  application/json:
  *                      schema:
- *                          type: string
+ *                        type: object
+ *                        properties:
+ *                          message:
+ *                              type: string
  */
-module.exports.get("/api/hello", (req: any, res: any) => {
+application.get("/api/hello/:id", (req: any, res: any) => {
     res.json({ message: "Hello from Express API! 🚀" });
 });
 
 // Catch-all to serve React frontend on any route
-module.exports.get("*", (req: any, res: any) => {
+application.get("*", (req: any, res: any) => {
     res.sendFile(path.join(__dirname, "../../public", "index.html"));
 });
+
+module.exports = application

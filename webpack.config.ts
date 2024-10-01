@@ -15,7 +15,7 @@ module.exports = {
   devServer: {
     static: path.join(__dirname, "dist"),
     hot: true, // Enables hot module replacement
-    open: true, // Automatically open browser after starting the server
+    open: false, // Automatically open browser after starting the server
     compress: true, // Enable gzip compression for faster load times
     port: 3000, // Local development server port
     historyApiFallback: true, // Ensures proper routing with react-router
