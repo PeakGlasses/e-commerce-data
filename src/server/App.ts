@@ -3,11 +3,20 @@ const setupSwagger = require("./swagger");
 const express = require("express");
 const path = require("path");
 const cors = require("cors");
+const morgan = require("morgan");
+const logger = require("./logger");
 module.exports = express();
 
 // Middleware
 module.exports.use(cors());
 module.exports.use(express.json());
+
+// Setup Morgan to log HTTP requests with winston
+module.exports.use(morgan("combined", {
+    stream: {
+        write: (message: string) => logger.info(message.trim())
+    }
+}))
 
 // Set up Swagger
 setupSwagger(module.exports);

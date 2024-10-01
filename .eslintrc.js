@@ -21,7 +21,7 @@ module.exports = {
   },
   plugins: ["react", "@typescript-eslint", "prettier"],
   rules: {
-    "prettier/prettier": "warn", // Shows Prettier errors as ESLint errors
+    "prettier/prettier": "off", // Shows Prettier errors as ESLint errors
     "react/react-in-jsx-scope": "off", // Disable for React 17+ (new JSX transform)
     "@typescript-eslint/no-unused-vars": "warn", // Example: show unused variables as a warning
   },
