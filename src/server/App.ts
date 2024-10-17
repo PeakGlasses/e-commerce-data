@@ -5,6 +5,8 @@ const path = require("path");
 const cors = require("cors");
 const morgan = require("morgan");
 const logger = require("./logger");
+const userRoutes = require("./routes/User");
+
 const application = express();
 
 // Middleware
@@ -24,26 +26,7 @@ setupSwagger(application);
 // Serve React frontend
 application.use(express.static(path.join(__dirname, "../../public")));
 
-// Example route
-/**
- * @swagger
- * /api/hello:
- *  get:
- *      summary: test api
- *      responses:
- *          200:
- *              description: success response
- *              content:
- *                  application/json:
- *                      schema:
- *                        type: object
- *                        properties:
- *                          message:
- *                              type: string
- */
-application.get("/api/hello/:id", (req: any, res: any) => {
-    res.json({ message: "Hello from Express API! 🚀" });
-});
+application.use("/api/users", userRoutes);
 
 // Catch-all to serve React frontend on any route
 application.get("*", (req: any, res: any) => {
