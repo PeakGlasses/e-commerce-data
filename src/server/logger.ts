@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
-const winston = require("winston");
+import winston from "winston";
 
-module.exports = winston.createLogger({
+const logger = winston.createLogger({
   level: "info",
   format: winston.format.combine(
     winston.format.timestamp(),
@@ -13,3 +13,5 @@ module.exports = winston.createLogger({
     new winston.transports.File({ filename: "combined.log" }), // Log all requests to a file
   ],
 });
+
+export default logger
