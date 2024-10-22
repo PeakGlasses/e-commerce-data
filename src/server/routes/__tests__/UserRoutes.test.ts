@@ -1,6 +1,6 @@
 import request from 'supertest';
 import express, { Application } from 'express';
-import userRoutes from '../../routes/UserRoutes';
+import userRoutes from '../UserRoute';
 import { userService } from '../../services/UserService';
 
 jest.mock('../../services/UserService');
