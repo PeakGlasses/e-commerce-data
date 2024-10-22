@@ -1,11 +1,11 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
-const setupSwagger = require("./swagger");
-const express = require("express");
-const path = require("path");
-const cors = require("cors");
-const morgan = require("morgan");
-const logger = require("./logger");
-const userRoutes = require("./routes/UserRoutes");
+import setupSwagger from "./swagger";
+import express, { Request, Response } from "express";
+import path from "path";
+import cors from "cors";
+import morgan from "morgan";
+import logger from "./logger";
+import userRoutes from "./routes/UserRoute";
+import productRoutes from "./routes/ProductRoute";
 
 const application = express();
 
@@ -27,10 +27,11 @@ setupSwagger(application);
 application.use(express.static(path.join(__dirname, "../../public")));
 
 application.use("/api/users", userRoutes);
+application.use("/api/products", productRoutes);
 
 // Catch-all to serve React frontend on any route
-application.get("*", (req: any, res: any) => {
+application.get("*", (req: Request, res: Response) => {
     res.sendFile(path.join(__dirname, "../../public", "index.html"));
 });
 
-module.exports = application
+export default application

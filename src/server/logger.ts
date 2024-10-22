@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
 import winston from "winston";
 
 const logger = winston.createLogger({
