@@ -1,15 +1,15 @@
-import { Router } from 'express';
-import { userController } from '../controllers/UserController';
+import { Router } from "express";
+import { userController } from "../controllers/UserController";
 
 const router = Router();
 
 // Register user
-router.post('/register', userController.register);
+router.post("/register", userController.register);
 
 // Login user
-router.post('/login', userController.login);
+router.post("/login", userController.login);
 
 // Get user profile
-router.get('/me', userController.getProfile);
+router.get("/me", userController.getProfile);
 
 export default router;

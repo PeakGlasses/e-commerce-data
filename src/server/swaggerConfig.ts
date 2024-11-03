@@ -18,7 +18,7 @@ const swaggerDefinition = {
     ],
 };
 
-module.exports = {
+export default {
     swaggerDefinition,
     apis: ["./src/server/App.ts"], // Paths to files containing OpenAPI annotations
 };

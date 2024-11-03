@@ -50,6 +50,9 @@ export const productController = {
                     `Something went wrong during product creation. ${error.message}`
                 );
             }
+            res.status(500).json({
+                message: "Error occurred during product creation",
+            });
         }
     },
     async updateProductById(req: Request, res: Response) {
@@ -72,9 +75,9 @@ export const productController = {
         } catch (error) {
             if (error instanceof Error) {
                 logger.error(`Update product error: ${error.message}`);
-                return res
-                    .status(500)
-                    .json({ message: "Error updating product" });
+                return res.status(500).json({
+                    message: "Error occurred during updating product",
+                });
             }
         }
     },
