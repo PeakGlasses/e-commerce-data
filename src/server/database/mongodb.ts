@@ -22,7 +22,7 @@ export const connectToDatabase = async (): Promise<Db> => {
     });
 
     try {
-        mongoose.connect(uri || "", {
+        await mongoose.connect(uri || "", {
             serverApi: {
                 version: ServerApiVersion.v1,
                 strict: true,
