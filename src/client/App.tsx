@@ -14,6 +14,8 @@ import {
     Shipping,
     Careers,
     Blog,
+    Checkout,
+    CheckoutReturn,
 } from "./pages";
 
 const App: React.FC = () => {
@@ -37,6 +39,8 @@ const App: React.FC = () => {
                         <Route path="/about" element={<About />} />
                         <Route path="/careers" element={<Careers />} />
                         <Route path="/blog" element={<Blog />} />
+                        <Route path="/checkout" element={<Checkout />} />
+                        <Route path="/return" element={<CheckoutReturn />} />
                     </Routes>
                 </main>
                 <Footer />

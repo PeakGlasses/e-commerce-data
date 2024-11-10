@@ -9,3 +9,5 @@ export { Returns } from "./Returns";
 export { Shipping } from "./Shipping";
 export { Careers } from "./Careers";
 export { Blog } from "./Blog";
+export { Checkout } from "./Checkout";
+export { CheckoutReturn } from "./CheckoutReturn";
