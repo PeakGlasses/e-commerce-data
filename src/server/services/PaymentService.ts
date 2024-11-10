@@ -2,6 +2,7 @@ import Stripe from "stripe";
 import logger from "../logger";
 import dotenv from "dotenv";
 import { ReqLineItem, StripeLineItem } from "../utils/types";
+import { changePriceToCents } from "../utils/utils";
 dotenv.config();
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY || "");
@@ -28,7 +29,59 @@ export const paymentService = {
                 quantity: item.quantity,
             }));
             const checkoutSession = await stripe.checkout.sessions.create({
+                shipping_address_collection: {
+                    allowed_countries: ["CA"],
+                },
+                shipping_options: [
+                    {
+                        shipping_rate_data: {
+                            type: "fixed_amount",
+                            fixed_amount: {
+                                amount: changePriceToCents(5),
+                                currency: "cad",
+                            },
+                            display_name: "Standard shipping",
+                            tax_behavior: 'exclusive',
+                            tax_code: 'txcd_92010001',
+                            delivery_estimate: {
+                                minimum: {
+                                    unit: "business_day",
+                                    value: 1,
+                                },
+                                maximum: {
+                                    unit: "business_day",
+                                    value: 3,
+                                },
+                            },
+                        },
+                    },
+                    {
+                        shipping_rate_data: {
+                            type: "fixed_amount",
+                            fixed_amount: {
+                                amount: changePriceToCents(15),
+                                currency: "cad",
+                            },
+                            display_name: "Next day delivery",
+                            tax_behavior: 'exclusive',
+                            tax_code: 'txcd_92010001',
+                            delivery_estimate: {
+                                minimum: {
+                                    unit: "business_day",
+                                    value: 1,
+                                },
+                                maximum: {
+                                    unit: "business_day",
+                                    value: 1,
+                                },
+                            },
+                        },
+                    },
+                ],
                 line_items: lineItems,
+                automatic_tax: {
+                    enabled: true,
+                },
                 mode: "payment",
                 ui_mode: "embedded",
                 return_url:
