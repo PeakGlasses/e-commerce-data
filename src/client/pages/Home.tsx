@@ -5,7 +5,7 @@ export function Home() {
         <div className="homepage">
             <section className="hero-section">
                 <div className="hero-content">
-                    <h1>Welcome to SkyShop</h1>
+                    <h1>Welcome to Peaks</h1>
                     <p>Your one-stop shop for premium sunglasses.</p>
                     <button className="shop-now-button">Shop Now</button>
                 </div>

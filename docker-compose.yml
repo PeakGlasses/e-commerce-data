@@ -1,0 +1,40 @@
+services:
+  backend:
+    container_name: backend
+    image: backend
+    build:
+      context: .
+      dockerfile: Dockerfile_BE # Backend Dockerfile
+      target: base
+    ports:
+      - "${LOCAL_API_PORT:-8000}:${LOCAL_API_PORT:-8000}"
+    environment:
+      PORT: ${LOCAL_API_PORT:-8000}
+      MONGO_URL: mongodb://mongo:27017/admin
+    depends_on:
+      - mongo
+
+  frontend:
+    container_name: frontend
+    build:
+      context: .
+      dockerfile: Dockerfile_FE
+    ports:
+      - "${LOCAL_UI_PORT:-3000}:${LOCAL_UI_PORT:-3000}" # Serve React frontend on port 3000
+    environment:
+      REACT_APP_API_URL: http://localhost:8000 # Connect to backend
+      CHOKIDAR_USEPOLLING: "true"
+    volumes:
+      - "./src/client:/app" # Mounts the frontend source directory
+      - "/app/node_modules" # Ensures node_modules remains in container
+
+  mongo:
+    image: mongo:5
+    container_name: mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+
+volumes:
+  mongo-data:
