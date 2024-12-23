@@ -5,9 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ce533c4c-4bd8-4551-85e8-b7a30f604d12" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Dockerfile_FE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/client/store/services/productsApi.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/client/store/slices/cartSlice.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/client/store/store.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/client/pages/Home.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/pages/Home.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client/pages/ProductList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/pages/ProductList.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/server/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/index.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,6 +24,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="TypeScript JSX File" />
+        <option value="tsconfig.json" />
         <option value="TypeScript File" />
       </list>
     </option>
@@ -59,7 +66,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "sp/docker",
+    "git-widget-placeholder": "sp/fe-state",
     "last_opened_file_path": "/Users/setupotnis/Desktop/Github/e-commerce",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -79,10 +86,15 @@
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/client/store/slices" />
+    </key>
   </component>
   <component name="RunManager" selected="npm.dev">
     <configuration default="true" type="docker-deploy" factoryName="dockerfile" temporary="true">
-      <deployment type="dockerfile" />
+      <deployment type="dockerfile">
+        <settings />
+      </deployment>
       <method v="2" />
     </configuration>
     <configuration name="dev" type="js.build_tools.npm" activateToolWindowBeforeRun="false" nameIsGenerated="true">

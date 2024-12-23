@@ -1,7 +1,7 @@
 import app from "./App";
 import { connectToDatabase } from "./database/mongodb";
 
-const PORT = process.env.PORT || 8000;
+const PORT = process.env.LOCAL_API_PORT || 8000;
 
 app.listen(PORT, async () => {
     await connectToDatabase();
