@@ -21,6 +21,7 @@
     "test": "jest"
   },
   "dependencies": {
+    "@google-cloud/storage": "^7.14.0",
     "@stripe/react-stripe-js": "^2.8.1",
     "@stripe/stripe-js": "^4.9.0",
     "@testing-library/user-event": "^13.5.0",
