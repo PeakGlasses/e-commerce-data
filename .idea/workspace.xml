@@ -5,9 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ce533c4c-4bd8-4551-85e8-b7a30f604d12" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/client/contexts/AppContext.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client/pages/Home.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/pages/Home.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client/styles/pages/HomePage.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/styles/pages/HomePage.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -118,8 +120,8 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="npm.server:dev" />
       <item itemvalue="npm.dev" />
+      <item itemvalue="npm.server:dev" />
       <item itemvalue="npm.format" />
     </list>
     <recent_temporary>
@@ -147,6 +149,9 @@
       <workItem from="1730588075480" duration="15891000" />
       <workItem from="1730606500453" duration="1783000" />
       <workItem from="1741497153584" duration="571000" />
+      <workItem from="1741578428216" duration="99000" />
+      <workItem from="1743270410998" duration="84000" />
+      <workItem from="1743270500437" duration="4500000" />
     </task>
     <servers />
   </component>
