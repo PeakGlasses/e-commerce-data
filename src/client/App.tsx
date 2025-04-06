@@ -17,35 +17,38 @@ import {
     Checkout,
     CheckoutReturn,
 } from "./pages";
+import { AppProvider } from "./contexts/AppContext";
 
 const App: React.FC = () => {
     return (
-        <Router>
-            <div className="App">
-                <NavBar />
-                <main>
-                    <Routes>
-                        <Route path="/" element={<Home />} />
-                        <Route path="/products" element={<ProductList />} />
-                        <Route
-                            path="/products/:id"
-                            element={<ProductDetails />}
-                        />
-                        <Route path="/cart" element={<Cart />} />
-                        <Route path="/contact" element={<Contact />} />
-                        <Route path="/faqs" element={<FAQs />} />
-                        <Route path="/returns" element={<Returns />} />
-                        <Route path="/shipping" element={<Shipping />} />
-                        <Route path="/about" element={<About />} />
-                        <Route path="/careers" element={<Careers />} />
-                        <Route path="/blog" element={<Blog />} />
-                        <Route path="/checkout" element={<Checkout />} />
-                        <Route path="/return" element={<CheckoutReturn />} />
-                    </Routes>
-                </main>
-                <Footer />
-            </div>
-        </Router>
+        <AppProvider>
+            <Router>
+                <div className="App">
+                    <NavBar />
+                    <main>
+                        <Routes>
+                            <Route path="/" element={<Home />} />
+                            <Route path="/products" element={<ProductList />} />
+                            <Route
+                                path="/products/:id"
+                                element={<ProductDetails />}
+                            />
+                            <Route path="/cart" element={<Cart />} />
+                            {/*<Route path="/contact" element={<Contact />} />*/}
+                            {/*<Route path="/faqs" element={<FAQs />} />*/}
+                            {/*<Route path="/returns" element={<Returns />} />*/}
+                            {/*<Route path="/shipping" element={<Shipping />} />*/}
+                            {/*<Route path="/about" element={<About />} />*/}
+                            {/*<Route path="/careers" element={<Careers />} />*/}
+                            {/*<Route path="/blog" element={<Blog />} />*/}
+                            <Route path="/checkout" element={<Checkout />} />
+                            <Route path="/return" element={<CheckoutReturn />} />
+                        </Routes>
+                    </main>
+                    <Footer />
+                </div>
+            </Router>
+        </AppProvider>
     );
 };
 
