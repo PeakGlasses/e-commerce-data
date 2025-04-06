@@ -4,7 +4,6 @@ import path from "path";
 import cors from "cors";
 import morgan from "morgan";
 import logger from "./logger";
-import userRoutes from "./routes/UserRoute";
 import productRoutes from "./routes/ProductRoute";
 import paymentRoutes from "./routes/PaymentRoute";
 
@@ -29,8 +28,6 @@ setupSwagger(application);
 // Serve React frontend
 application.use(express.static(path.join(__dirname, "../../public")));
 
-// not currently used
-application.use("/api/users", userRoutes);
 // used
 application.use("/api/products", productRoutes);
 application.use("/api/payments", paymentRoutes);
