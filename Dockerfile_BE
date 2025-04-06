@@ -1,6 +1,6 @@
 FROM node:20 AS base
 
-WORKDIR /server
+WORKDIR /src/server
 
 COPY package*.json ./
 
@@ -8,7 +8,6 @@ RUN rm -rf node_modules && npm cache clean --force && npm install
 
 # Copy the rest of the app's source code and build it
 COPY . .
-RUN npm run build
 
 # Start nginx
-CMD ["npm", "run", "server:dev"]
+CMD ["npm", "run", "dev"]
